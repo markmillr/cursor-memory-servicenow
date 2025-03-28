@@ -98,11 +98,11 @@ The Agent AI maintains context between these interactions, proactively documenti
 
 ## Important: Repository Privacy
 
-This template is designed to keep all data and configurations private. When you fork this repository:
+When creating a new repository from this template:
 
-1. **Default Privacy**
-   - Your forked repository will be created as private by default
-   - This is enforced through template configuration
+1. **Always Select Private**
+   - Make sure to select "Private" when creating your repository
+   - Each story/spike repository contains project-specific information
    - Never make your repository public
 
 2. **Data Handling**
@@ -263,8 +263,8 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
    - Go to https://github.com/markmillr/cursor-memory-servicenow
    - Click the green "Use this template" button
    - Select "Create a new repository"
-   - Name your repository to match your story/spike (e.g., "story-12345-incident-form" or "spike-678-impact-tracking")
-   - Choose "Private" for repository visibility
+   - Name your repository to match your story/spike (e.g., "stry0127233-change-model-tracking")
+   - **Important:** Select "Private" for repository visibility (this is not the default)
    - Click "Create repository from template"
    - Clone to your machine:
      ```bash
