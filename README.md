@@ -1,6 +1,6 @@
 # ServiceNow Development Memory Bank Template
 
-A GitHub repository template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod). You can create multiple private repositories based on this one, one for each story or spike you're working on, using GitHub's repository creation feature.
+A GitHub template repository for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod). You can create multiple private repositories from this template, one for each story or spike you're working on, using GitHub's "Use this template" feature.
 
 ## Example Usage
 
@@ -10,10 +10,11 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
    ```bash
    # First, create your new repository:
    # 1. Go to github.com/markmillr/cursor-memory-servicenow
-   # 2. Click the green "Code" button dropdown
+   # 2. Click the green "Use this template" button
    # 3. Select "Create a new repository"
    # 4. Choose your repository name (e.g., "story-12345-incident-form")
    # 5. Make sure to select "Private"
+   # 6. Click "Create repository from template"
    
    # Then clone your new repository:
    git clone https://github.com/YOUR_USERNAME/story-12345-incident-form.git
@@ -212,13 +213,13 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
 
 ## Quick Start
 
-1. **Create New Repository**
+1. **Create New Repository from Template**
    - Go to https://github.com/markmillr/cursor-memory-servicenow
-   - Click the green "Code" button dropdown
+   - Click the green "Use this template" button
    - Select "Create a new repository"
    - Name your repository to match your story/spike (e.g., "story-12345-incident-form" or "spike-678-impact-tracking")
    - Choose "Private" for repository visibility
-   - Click "Create repository"
+   - Click "Create repository from template"
    - Clone to your machine:
      ```bash
      git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
