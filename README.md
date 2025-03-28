@@ -86,7 +86,6 @@ Update sets are generally NOT transferred between environments, with specific ex
 
 3. **Exceptions**
    - Only move update sets in very specific cases
-   - Must be approved by your team
    - Document any exceptions in `systemPatterns.md`
 
 ## Interaction Models
