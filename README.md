@@ -2,6 +2,38 @@
 
 A GitHub template repository for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod). You can create multiple private repositories from this template, one for each story or spike you're working on, using GitHub's "Use this template" feature.
 
+## First Interaction with Agent AI
+
+When you first open your new project in Cursor and ask "What should I do next?" or "What should I do to get started?", the Agent AI will:
+
+1. **Read Story Context from Repository Name**
+   - Parse story/spike number and brief description from your repository name
+   - Ask you to confirm and expand on the story details
+
+2. **Gather Instance Information**
+   ```
+   Agent: "I see this is for STORY-12345 about incident form enhancement. Which ServiceNow instances will you be working with?"
+   You: "I'll be using dev123456.service-now.com as my PDI, and dev789012.service-now.com as our dev instance."
+   Agent: "Thanks! I'll note these in techContext.md. Have you created an update set for this work yet?"
+   You: "Not yet."
+   Agent: "I suggest creating an update set named 'MM_STRY12345_Incident_Form_Enhancement_28Mar2024'. Would you like guidance on creating it?"
+   ```
+
+3. **Understand Current State**
+   ```
+   Agent: "Let me check the instance version with stats.do. Are you working in global scope, or does this involve any specific application or plugin scope?"
+   You: "This will be in the ITSM application scope."
+   Agent: "Got it. I'll help you investigate the current incident form configuration and plan the enhancement."
+   ```
+
+4. **Begin Investigation/Development**
+   - Guide you through manual ServiceNow browser interface changes
+   - Document findings and decisions in the template files
+   - Help with update set management
+   - Provide test scenarios when needed
+
+The Agent AI will maintain this context throughout your development process, helping you track progress and decisions across different instances.
+
 ## Example Usage
 
 Here's how a ServiceNow developer might use this template with Cursor's Agent AI:
@@ -12,13 +44,13 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
    # 1. Go to github.com/markmillr/cursor-memory-servicenow
    # 2. Click the green "Use this template" button
    # 3. Select "Create a new repository"
-   # 4. Choose your repository name (e.g., "story-12345-incident-form")
+   # 4. Choose your repository name (e.g., "story-12345-incident-form-customer-impact")
    # 5. Make sure to select "Private"
    # 6. Click "Create repository from template"
    
    # Then clone your new repository:
-   git clone https://github.com/YOUR_USERNAME/story-12345-incident-form.git
-   cd story-12345-incident-form
+   git clone https://github.com/YOUR_USERNAME/story-12345-incident-form-customer-impact.git
+   cd story-12345-incident-form-customer-impact
    ```
 
 2. **Opening in Cursor**
@@ -29,26 +61,26 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
 3. **Initial Setup**
    ```
    You: "What should I do to get started?"
-   Agent: "I'll help you set up this project. First, I need some information about your story."
-   You: "I'm working on STORY-12345 to enhance the incident form with a new field for tracking customer impact."
-   Agent: "Great! I'll update storyContext.md with that information. Now, which ServiceNow instance will you be working in?"
-   You: "I'll start in my PDI to understand the OOB behavior."
-   Agent: "I'll note that in techContext.md. Let me ask you about the current incident form..."
+   Agent: "I see this is for STORY-12345 about adding customer impact to the incident form. Which ServiceNow instances will you be working with?"
+   You: "I'll be using dev123456.service-now.com as my PDI."
+   Agent: "Great! I'll note that in techContext.md. Have you created an update set for this work?"
+   You: "Not yet."
+   Agent: "I suggest creating an update set named 'MM_STRY12345_Incident_Customer_Impact_28Mar2024'. Would you like guidance on that?"
    ```
 
 4. **During Development**
    ```
    You: "I found that the OOB incident form has a related list for customer impact. Should I extend that?"
-   Agent: "Let me check your previous findings in storyContext.md... Based on your requirements, extending the related list might not be the best approach. Here's why..."
+   Agent: "Let me check your previous findings in storyContext.md... Based on your requirements, extending the related list might not be the best approach. Let's investigate the current form configuration in your PDI first."
    ```
 
-5. **Moving to Sandbox**
+5. **Moving to Dev**
    ```
-   You: "I'm ready to test this in the customer's sandbox."
-   Agent: "I'll help you document the differences between PDI and sandbox. First, let's check if there are any customizations to the incident form..."
+   You: "I've tested this in PDI and I'm ready to recreate it in dev."
+   Agent: "I'll help you document the changes needed. First, let's create a new update set in dev with the same naming convention..."
    ```
 
-The Agent AI maintains context between these interactions, remembers your findings, and helps guide your development process while keeping all information organized in the template files. Each story or spike gets its own private repository, allowing you to maintain separate contexts for different development tasks.
+The Agent AI maintains context between these interactions, remembers your findings, and helps guide your development process while keeping all information organized in the template files. Each story gets its own private repository, allowing you to maintain separate contexts for different development tasks.
 
 ## Important: Repository Privacy
 
