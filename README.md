@@ -71,6 +71,24 @@ graph LR
 - **Test**: Follow team's deployment and data practices
 - **Production**: Follow team's change management process
 
+### Important: Update Set Management
+Update sets are generally NOT transferred between environments, with specific exceptions:
+
+1. **PDI to Sandbox/Dev**
+   - Update sets are typically not moved from PDI
+   - Solutions are recreated from scratch in dev
+   - Helps ensure clean, maintainable code
+
+2. **Sandbox to Dev**
+   - Update sets are typically not moved from sandbox
+   - Solutions are recreated from scratch in dev
+   - Ensures proper handling of customer customizations
+
+3. **Exceptions**
+   - Only move update sets in very specific cases
+   - Must be approved by your team
+   - Document any exceptions in `systemPatterns.md`
+
 ## Interaction Models
 
 ### Default Model: Browser-Based Interaction
