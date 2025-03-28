@@ -108,7 +108,7 @@ Advanced users can enable command-line interaction with ServiceNow using:
    - Must be enabled per project
 
 To enable command-line integration:
-1. Update `techContext.md` to specify CLI tools in use
+1. Ask Agent AI to update `techContext.md` to specify CLI tools in use
 2. Document any CLI-specific configurations
 3. Note this in project documentation
 
