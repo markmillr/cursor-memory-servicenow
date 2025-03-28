@@ -50,6 +50,35 @@ graph LR
 - **Test**: For QA and UAT
 - **Production**: Deploy via standard change process
 
+## Interaction Models
+
+### Default Model: Browser-Based Interaction
+By default, this template assumes manual interaction with ServiceNow through the web interface. The AI agent will:
+- Guide you through manual steps in the browser
+- Help document your findings and decisions
+- Provide implementation guidance and best practices
+- Assist with creating update sets and change requests
+- Never attempt direct ServiceNow instance interaction
+
+### Optional: Command-Line Integration
+Advanced users can enable command-line interaction with ServiceNow using:
+
+1. **NOW-SDK with Fluent**
+   - Official ServiceNow CLI tool
+   - Enables scripted interactions
+   - Requires explicit configuration
+   - Must be enabled per project
+
+2. **VS Code Extensions**
+   - SNITCH Canary for ServiceNow development
+   - Other ServiceNow-specific extensions
+   - Optional and configurable
+
+To enable command-line integration:
+1. Update `techContext.md` to specify CLI tools in use
+2. Document any CLI-specific configurations
+3. Note this in project documentation
+
 ## Why Use This Template?
 
 When working with Cursor's Agent AI on ServiceNow development tasks, maintaining context between chat sessions is crucial. This template helps by:
@@ -90,12 +119,16 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
    - Can reference previous findings and decisions
    - Provides consistent guidance across sessions
    - Helps maintain development standards
+   - Guides you through manual ServiceNow interactions
+   - Never attempts direct instance interaction by default
 
 3. **Environment Management**
    - Clear documentation of instance differences
    - Safe development practices across environments
    - Consistent approach to changes
    - Better risk management
+   - Manual interaction with ServiceNow instances
+   - Optional CLI integration for advanced users
 
 ## Quick Start
 
@@ -123,6 +156,7 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
      - Gathering instance information
      - Setting up project goals
      - Automatically updating all necessary files
+     - Manual ServiceNow interaction steps
 
 ## Best Practices
 
@@ -136,6 +170,8 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
    - Validate in sandbox before dev
    - Never modify production directly
    - Document any environment-specific issues
+   - Use manual browser interaction by default
+   - Enable CLI tools only when explicitly needed
 
 ## Viewing Mermaid Diagrams
 
@@ -156,10 +192,10 @@ MIT License
 
 ## Acknowledgments
 
-This template was inspired by and builds upon several resources:
+This template was partially inspired by and builds upon several resources:
 
 1. The [Cursor Memory Bank](https://gist.github.com/ipenywis/1bdb541c3a612dbac4a14e1e3f4341ab) by [@ipenywis](https://github.com/ipenywis) (Islem Maboud / CoderOne)
 2. [CoderOne's YouTube channel](https://www.youtube.com/@CoderOne) and [Cursor Memory Bank video](https://www.youtube.com/watch?v=Uufa6flWid4)
-3. Independent ServiceNow development and research work by the template author
+3. My own previous experiments using Cursor for general research, notetaking, and ServiceNow development
 
 The template has been specifically adapted for ServiceNow development workflows and environment management, with a focus on maintaining context across multiple ServiceNow instances. 
