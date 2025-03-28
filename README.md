@@ -6,9 +6,9 @@ A GitHub template repository for maintaining project context and state in Servic
 
 Here's how a ServiceNow developer might use this template with Cursor's Agent AI:
 
-1. **Starting a New Story**
+1. **Creating a New Project**
    ```bash
-   # Fork and clone the template
+   # After using "Use this template" on GitHub to create "story-12345-incident-form"
    git clone https://github.com/YOUR_USERNAME/story-12345-incident-form.git
    cd story-12345-incident-form
    ```
@@ -40,7 +40,7 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
    Agent: "I'll help you document the differences between PDI and sandbox. First, let's check if there are any customizations to the incident form..."
    ```
 
-The Agent AI maintains context between these interactions, remembers your findings, and helps guide your development process while keeping all information organized in the template files.
+The Agent AI maintains context between these interactions, remembers your findings, and helps guide your development process while keeping all information organized in the template files. Each story or spike gets its own private repository, allowing you to maintain separate contexts for different development tasks.
 
 ## Important: Repository Privacy
 
