@@ -25,7 +25,7 @@ This template is designed to keep all data and configurations private. When you 
 
 ## Project Structure
 
-The memory bank consists of these key files:
+The memory bank consists of these key files, which the AI assistant will automatically update based on your responses:
 
 ```mermaid
 graph TD
@@ -55,8 +55,8 @@ This template supports working across ServiceNow environments:
 graph LR
     PDI[PDI] -->|Research OOB| SB[Sandbox]
     SB -->|Validate| DEV[Development]
-    DEV -->|Update Set| TEST[Test]
-    TEST -->|Standard Change| PROD[Production]
+    DEV -->|Team Process| TEST[Test]
+    TEST -->|Team Process| PROD[Production]
     
     style PDI fill:#f9f,stroke:#333,stroke-width:2px
     style SB fill:#bbf,stroke:#333,stroke-width:2px
@@ -68,8 +68,8 @@ graph LR
 - **PDI**: For OOB behavior research and POCs
 - **Customer Sandbox**: For validating solutions with customer data
 - **Development**: Primary coding environment
-- **Test**: For QA and UAT
-- **Production**: Deploy via standard change process
+- **Test**: Follow team's deployment and data practices
+- **Production**: Follow team's change management process
 
 ## Interaction Models
 
@@ -89,11 +89,6 @@ Advanced users can enable command-line interaction with ServiceNow using:
    - Enables scripted interactions
    - Requires explicit configuration
    - Must be enabled per project
-
-2. **VS Code Extensions**
-   - SNITCH Canary for ServiceNow development
-   - Other ServiceNow-specific extensions
-   - Optional and configurable
 
 To enable command-line integration:
 1. Update `techContext.md` to specify CLI tools in use
@@ -116,8 +111,8 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
    - Agent AI can reference your findings across sessions
 
 3. **Guiding Development**
-   - Agent AI understands your environment setup
-   - Can suggest appropriate approaches based on your instance
+   - Agent AI learns your environment through targeted questions
+   - Can suggest appropriate approaches based on your responses
    - Helps maintain consistency across environments
    - Provides context-aware code suggestions
 
