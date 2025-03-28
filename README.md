@@ -6,33 +6,38 @@ A GitHub template repository for maintaining project context and state in Servic
 
 When you first open your new project in Cursor and ask "What should I do next?" or "What should I do to get started?", the Agent AI will:
 
-1. **Read Story Context from Repository Name**
-   - Parse story/spike number and brief description from your repository name
-   - Ask you to confirm and expand on the story details
-
-2. **Gather Instance Information**
+1. **Understand Your Task**
    ```
-   Agent: "I see this is for STORY-12345 about incident form enhancement. Which ServiceNow instances will you be working with?"
-   You: "I'll be using dev123456.service-now.com as my PDI, and dev789012.service-now.com as our dev instance."
-   Agent: "Thanks! I'll note these in techContext.md. Have you created an update set for this work yet?"
-   You: "Not yet."
-   Agent: "I suggest creating an update set named 'MM_STRY12345_Incident_Form_Enhancement_28Mar2024'. Would you like guidance on creating it?"
+   Agent: "I see this is for STRY0127233. Could you tell me about what you're working on?"
+   You: "We need to add a new field to the change form to track the change model used. The story mentions this will help with reporting and governance."
+   Agent: "Thanks. Do you have any acceptance criteria or specific requirements you can share?"
+   You: "Yes, the AC says we need to: 1) Add a reference field to point to change models, 2) Make it mandatory for normal changes, 3) Add it to the change reports."
+   Agent: "Got it. And are there any existing work notes or context that would be helpful for me to know about?"
    ```
 
-3. **Understand Current State**
+2. **Identify Working Environment**
    ```
-   Agent: "Let me check the instance version with stats.do. Are you working in global scope, or does this involve any specific application or plugin scope?"
-   You: "This will be in the ITSM application scope."
-   Agent: "Got it. I'll help you investigate the current incident form configuration and plan the enhancement."
+   Agent: "Which instance will you be starting your investigation in?"
+   You: "I'll start in my PDI to look at the OOB behavior."
+   Agent: "Perfect. And will you need to test this in sandbox before moving to dev?"
+   You: "No, for this one we can go straight from PDI to dev once we know what we're doing."
    ```
 
-4. **Begin Investigation/Development**
-   - Guide you through manual ServiceNow browser interface changes
-   - Document findings and decisions in the template files
-   - Help with update set management
-   - Provide test scenarios when needed
+3. **Guide Investigation**
+   ```
+   Agent: "Let's start by looking at the current change form and change model structure. Could you open a normal change in your PDI?"
+   You: "Ok, I have one open."
+   Agent: "Great. Let's first check if there are any existing fields related to change models. Could you look at the form in the browser and also check the dictionary for the change table?"
+   ```
 
-The Agent AI will maintain this context throughout your development process, helping you track progress and decisions across different instances.
+4. **Begin Development**
+   - Help you understand the current state
+   - Guide you through investigating options
+   - Suggest manual changes to try in the instance
+   - Document findings and decisions
+   - Help with update set creation when needed
+
+The Agent AI will maintain this context throughout your development process, using targeted questions to help you explore solutions and document decisions.
 
 ## Example Usage
 
@@ -44,13 +49,13 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
    # 1. Go to github.com/markmillr/cursor-memory-servicenow
    # 2. Click the green "Use this template" button
    # 3. Select "Create a new repository"
-   # 4. Choose your repository name (e.g., "story-12345-incident-form-customer-impact")
+   # 4. Choose your repository name (e.g., "stry0127233-change-model-tracking")
    # 5. Make sure to select "Private"
    # 6. Click "Create repository from template"
    
    # Then clone your new repository:
-   git clone https://github.com/YOUR_USERNAME/story-12345-incident-form-customer-impact.git
-   cd story-12345-incident-form-customer-impact
+   git clone https://github.com/YOUR_USERNAME/stry0127233-change-model-tracking.git
+   cd stry0127233-change-model-tracking
    ```
 
 2. **Opening in Cursor**
@@ -61,26 +66,27 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
 3. **Initial Setup**
    ```
    You: "What should I do to get started?"
-   Agent: "I see this is for STORY-12345 about adding customer impact to the incident form. Which ServiceNow instances will you be working with?"
-   You: "I'll be using dev123456.service-now.com as my PDI."
-   Agent: "Great! I'll note that in techContext.md. Have you created an update set for this work?"
-   You: "Not yet."
-   Agent: "I suggest creating an update set named 'MM_STRY12345_Incident_Customer_Impact_28Mar2024'. Would you like guidance on that?"
+   Agent: "I see this is for STRY0127233. Could you tell me about what you're working on?"
+   You: "We need to add a new field to track which change model was used for each change request."
+   Agent: "Could you share any acceptance criteria or requirements you have?"
+   You: "We need to add a reference field to the change form that points to change models, make it mandatory for normal changes, and include it in reports."
+   Agent: "Got it. Which instance would you like to start investigating this in?"
+   You: "I'll start in my PDI to understand how change models work OOB."
    ```
 
 4. **During Development**
    ```
-   You: "I found that the OOB incident form has a related list for customer impact. Should I extend that?"
-   Agent: "Let me check your previous findings in storyContext.md... Based on your requirements, extending the related list might not be the best approach. Let's investigate the current form configuration in your PDI first."
+   You: "I've found the change model table, but I'm not sure about the best way to reference it."
+   Agent: "Let's look at how ServiceNow handles similar references. Could you check if there are any other reference fields on the change form that might follow a similar pattern?"
    ```
 
 5. **Moving to Dev**
    ```
-   You: "I've tested this in PDI and I'm ready to recreate it in dev."
-   Agent: "I'll help you document the changes needed. First, let's create a new update set in dev with the same naming convention..."
+   You: "I've tested the changes in PDI and understand what we need to do."
+   Agent: "Great! Before we recreate the changes in dev, let's document what we learned about the change model structure and the fields we'll need to add."
    ```
 
-The Agent AI maintains context between these interactions, remembers your findings, and helps guide your development process while keeping all information organized in the template files. Each story gets its own private repository, allowing you to maintain separate contexts for different development tasks.
+The Agent AI maintains context between these interactions, using targeted questions to help you explore solutions and document decisions. Each story or spike gets its own private repository, allowing you to maintain separate contexts for different development tasks.
 
 ## Important: Repository Privacy
 
