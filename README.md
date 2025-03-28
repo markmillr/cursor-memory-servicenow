@@ -1,65 +1,115 @@
 # ServiceNow Development Memory Bank Template
 
-A template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template is specifically designed for ServiceNow architects and developers working on Agile stories and spikes.
+A template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod).
 
-## Overview
+## Why Use This Template?
 
-This template provides a structured approach to maintaining project context between AI chat sessions, specifically tailored for ServiceNow development. It helps Cursor AI understand:
+When working with Cursor's Agent AI on ServiceNow development tasks, maintaining context between chat sessions is crucial. This template helps by:
 
-- Current story/spike context
-- Instance-specific configurations
-- Technical decisions and patterns
-- Development progress
-- Known issues and technical debt
+1. **Maintaining Project Memory**
+   - Agent AI reads all template files at the start of each session
+   - Your story details, instance configurations, and technical decisions are preserved
+   - No need to repeat context in every chat
 
-## Structure
+2. **Streamlining Investigation**
+   - Document findings about OOB behavior in PDI
+   - Track customer-specific configurations in sandbox
+   - Compare environments and document differences
+   - Agent AI can reference your findings across sessions
 
-The memory bank consists of several core files:
+3. **Guiding Development**
+   - Agent AI understands your environment setup
+   - Can suggest appropriate approaches based on your instance
+   - Helps maintain consistency across environments
+   - Provides context-aware code suggestions
 
-1. `projectbrief.md` - Foundation document defining project scope and goals
-2. `techContext.md` - Technical details about the ServiceNow instance and development environment
-3. `systemPatterns.md` - Architecture patterns and technical decisions
-4. `activeContext.md` - Current work focus and recent changes
-5. `progress.md` - Implementation status and tracking
+4. **Managing Complexity**
+   - Keep track of multiple ServiceNow instances
+   - Document environment-specific issues
+   - Track dependencies and blockers
+   - Maintain a clear development path
 
-## Usage
+## How It Works
 
-1. **Initial Setup**
-   - Clone this template repository
-   - Update `techContext.md` with your instance details
+1. **Template Files as Memory**
+   - Each file serves as a specific aspect of project memory
+   - Agent AI reads these files at session start
+   - Updates to files persist between sessions
+   - Files work together to provide complete context
+
+2. **AI Assistant Integration**
+   - Agent AI understands your ServiceNow environment
+   - Can reference previous findings and decisions
+   - Provides consistent guidance across sessions
+   - Helps maintain development standards
+
+3. **Environment Management**
+   - Clear documentation of instance differences
+   - Safe development practices across environments
+   - Consistent approach to changes
+   - Better risk management
+
+## Quick Start
+
+1. **Fork and Clone**
+   - Go to https://github.com/markmillr/cursor-memory-servicenow
+   - Click "Fork" in the top-right corner
+   - Rename your forked repository to match your story/spike (e.g., "story-12345-incident-form")
+   - Clone to your machine:
+     ```bash
+     git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+     cd YOUR_REPO_NAME
+     ```
+
+2. **Open in Cursor**
+   - Open Cursor IDE
+   - File > Open Folder > Select your cloned repository
+   - Wait for Cursor to index the files
+
+3. **Configure Your Project**
+   - Update `storyContext.md` with your story/spike details
+   - Update `techContext.md` with your instance information
    - Update `projectbrief.md` with your project goals
 
-2. **During Development**
-   - Keep `activeContext.md` updated with current story/spike details
-   - Document technical decisions in `systemPatterns.md`
-   - Track progress in `progress.md`
+4. **Start Working**
+   - Click the chat icon in Cursor's right sidebar
+   - Select "Agent" mode
+   - Ask "What should I do next?" or "What do you need me to add?"
 
-3. **AI Interaction**
-   - Cursor AI will read all memory bank files at the start of each session
-   - Use "update memory bank" to trigger a full review of all files
-   - AI will maintain context between sessions based on these files
+## Project Structure
+
+The memory bank consists of these key files:
+
+1. `storyContext.md` - Story/spike details and acceptance criteria
+2. `techContext.md` - Instance and environment information
+3. `projectbrief.md` - Project scope and goals
+4. `activeContext.md` - Current work focus
+5. `progress.md` - Implementation status
+6. `systemPatterns.md` - Technical decisions
+
+## Environment Support
+
+This template supports working across ServiceNow environments:
+
+- **PDI**: For OOB behavior research and POCs
+- **Customer Sandbox**: For validating solutions with customer data
+- **Development**: Primary coding environment
+- **Test**: For QA and UAT
+- **Production**: Deploy via standard change process
 
 ## Best Practices
 
 1. **Documentation**
-   - Keep all files up to date
-   - Document decisions as they're made
-   - Include specific ServiceNow instance details
+   - Keep `storyContext.md` updated with current work
+   - Document environment-specific configurations
+   - Note any technical decisions made
 
-2. **Story Management**
-   - Track current story/spike details
-   - Document dependencies and blockers
-   - Update progress regularly
-
-3. **Technical Context**
-   - Document instance-specific configurations
-   - Track custom applications and scopes
-   - Maintain development standards
-
-## Contributing
-
-Feel free to submit issues and enhancement requests to improve this template for ServiceNow development.
+2. **Environment Safety**
+   - Use PDI for initial research
+   - Validate in sandbox before dev
+   - Never modify production directly
+   - Document any environment-specific issues
 
 ## License
 
-This template is open source and available under the MIT License. 
+MIT License 
