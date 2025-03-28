@@ -74,10 +74,10 @@ graph LR
 ### Important: Update Set Management
 Update sets are generally NOT transferred between environments, with specific exceptions:
 
-1. **PDI to Sandbox/Dev**
+1. **PDI to Sandbox**
    - Update sets are typically not moved from PDI
-   - Solutions are recreated from scratch in dev
-   - Helps ensure clean, maintainable code
+   - Solutions are recreated from scratch in sandbox
+   - Helps ensure clean, maintainable code and avoid conflicts
 
 2. **Sandbox to Dev**
    - Update sets are typically not moved from sandbox
