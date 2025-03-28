@@ -2,6 +2,27 @@
 
 A template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod).
 
+## Important: Repository Privacy
+
+This template is designed for working with private company data and configurations. When you fork this repository:
+
+1. **Default Privacy**
+   - Your forked repository will be created as private by default
+   - This is enforced through template configuration
+   - Never make your repository public
+
+2. **Data Handling**
+   - Never commit sensitive data or credentials
+   - Use environment variables or secure secret management
+   - Document any sensitive information in a secure location
+   - Consider using GitHub's secret scanning feature
+
+3. **Security Best Practices**
+   - Keep your repository private
+   - Use branch protection rules
+   - Enable vulnerability alerts
+   - Follow your company's security policies
+
 ## Project Structure
 
 The memory bank consists of these key files:

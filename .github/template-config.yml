@@ -1,0 +1,27 @@
+# Template configuration for ServiceNow Development Memory Bank
+# This file helps set default settings when users fork this template
+
+# Default repository settings
+repository:
+  # Set default visibility to private
+  visibility: private
+  # Enable issues by default
+  has_issues: true
+  # Enable discussions by default
+  has_discussions: true
+  # Enable projects by default
+  has_projects: true
+  # Enable wiki by default
+  has_wiki: true
+  # Enable downloads by default
+  has_downloads: true
+  # Enable vulnerability alerts by default
+  vulnerability_alerts: true
+  # Enable security policy by default
+  security_policy: true
+  # Enable branch protection by default
+  branch_protection:
+    required_status_checks: null
+    enforce_admins: false
+    required_pull_request_reviews: null
+    restrictions: null 
