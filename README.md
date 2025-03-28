@@ -2,6 +2,46 @@
 
 A template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod).
 
+## Example Usage
+
+Here's how a ServiceNow developer might use this template with Cursor's Agent AI:
+
+1. **Starting a New Story**
+   ```bash
+   # Fork and clone the template
+   git clone https://github.com/YOUR_USERNAME/story-12345-incident-form.git
+   cd story-12345-incident-form
+   ```
+
+2. **Opening in Cursor**
+   - Open the project in Cursor
+   - Click the chat icon
+   - Select "Agent" mode
+
+3. **Initial Setup**
+   ```
+   You: "What should I do to get started?"
+   Agent: "I'll help you set up this project. First, I need some information about your story."
+   You: "I'm working on STORY-12345 to enhance the incident form with a new field for tracking customer impact."
+   Agent: "Great! I'll update storyContext.md with that information. Now, which ServiceNow instance will you be working in?"
+   You: "I'll start in my PDI to understand the OOB behavior."
+   Agent: "I'll note that in techContext.md. Let me ask you about the current incident form..."
+   ```
+
+4. **During Development**
+   ```
+   You: "I found that the OOB incident form has a related list for customer impact. Should I extend that?"
+   Agent: "Let me check your previous findings in storyContext.md... Based on your requirements, extending the related list might not be the best approach. Here's why..."
+   ```
+
+5. **Moving to Sandbox**
+   ```
+   You: "I'm ready to test this in the customer's sandbox."
+   Agent: "I'll help you document the differences between PDI and sandbox. First, let's check if there are any customizations to the incident form..."
+   ```
+
+The Agent AI maintains context between these interactions, remembers your findings, and helps guide your development process while keeping all information organized in the template files.
+
 ## Important: Repository Privacy
 
 This template is designed to keep all data and configurations private. When you fork this repository:
