@@ -173,6 +173,39 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
      - Setting up project goals
      - Automatically updating all necessary files
      - Manual ServiceNow interaction steps
+     - Optional GitHub integration setup
+
+## GitHub Integration
+
+The AI agent can automatically commit and push changes to your private GitHub repository. This feature is optional and requires:
+
+1. **Basic Git Setup**
+   - Git installed on your machine
+   - Basic Git configuration (name and email)
+   - No GitHub CLI required
+
+2. **Authentication Options**
+   - HTTPS with personal access token (recommended for beginners)
+   - SSH with configured keys (advanced setup)
+   - GitHub CLI (optional)
+
+3. **Features When Enabled**
+   - Automatic commits with descriptive messages
+   - Regular pushes to your private repository
+   - No manual Git commands needed
+   - Context preservation across sessions
+
+4. **Setup Process**
+   - AI agent will ask if you want to enable GitHub integration
+   - Guides you through authentication setup if needed
+   - Explains the benefits and requirements
+   - Can be enabled/disabled at any time
+
+5. **Security Considerations**
+   - Only works with private repositories
+   - No sensitive data is committed
+   - Follows security best practices
+   - Respects your repository's privacy settings
 
 ## Best Practices
 
