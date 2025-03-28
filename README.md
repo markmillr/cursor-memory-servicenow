@@ -10,17 +10,19 @@ When you first open your new project in Cursor and ask "What should I do next?" 
    ```
    Agent: "I see this is for STRY0127233. Could you tell me about what you're working on?"
    You: "We need to add a new field to the change form to track the change model used. The story mentions this will help with reporting and governance."
-   Agent: "Thanks. Do you have any acceptance criteria or specific requirements you can share?"
+   Agent: "Thanks, I'll update storyContext.md with that information. Do you have any acceptance criteria or specific requirements you can share?"
    You: "Yes, the AC says we need to: 1) Add a reference field to point to change models, 2) Make it mandatory for normal changes, 3) Add it to the change reports."
-   Agent: "Got it. And are there any existing work notes or context that would be helpful for me to know about?"
+   Agent: "Got it, I've added those acceptance criteria to storyContext.md. And are there any existing work notes or context that would be helpful for me to know about?"
+   You: "Yes, there's a note that says this was requested by the Change Advisory Board."
+   Agent: "I'll add that context as well. Now, which instance will you be starting your investigation in?"
    ```
 
 2. **Identify Working Environment**
    ```
-   Agent: "Which instance will you be starting your investigation in?"
    You: "I'll start in my PDI to look at the OOB behavior."
-   Agent: "Perfect. And will you need to test this in sandbox before moving to dev?"
+   Agent: "Perfect, I'll note that in techContext.md. And will you need to test this in sandbox before moving to dev?"
    You: "No, for this one we can go straight from PDI to dev once we know what we're doing."
+   Agent: "I've updated techContext.md with your environment workflow. Based on what we know so far, I think we should start by examining the current change form structure. Would you like to begin there?"
    ```
 
 3. **Guide Investigation**
@@ -28,16 +30,19 @@ When you first open your new project in Cursor and ask "What should I do next?" 
    Agent: "Let's start by looking at the current change form and change model structure. Could you open a normal change in your PDI?"
    You: "Ok, I have one open."
    Agent: "Great. Let's first check if there are any existing fields related to change models. Could you look at the form in the browser and also check the dictionary for the change table?"
+   You: "I see there's already a change_model field but it's not being used."
+   Agent: "Interesting finding! I'll document that in systemPatterns.md since it might affect our implementation approach. Let's investigate why that field isn't being used..."
    ```
 
 4. **Begin Development**
    - Help you understand the current state
    - Guide you through investigating options
    - Suggest manual changes to try in the instance
-   - Document findings and decisions
+   - Document findings and decisions in real-time
    - Help with update set creation when needed
+   - Continuously update project files with new information
 
-The Agent AI will maintain this context throughout your development process, using targeted questions to help you explore solutions and document decisions.
+The Agent AI will maintain this context throughout your development process, proactively updating the template files as new information is discovered and using targeted questions to help you explore solutions and document decisions.
 
 ## Example Usage
 
@@ -68,25 +73,28 @@ Here's how a ServiceNow developer might use this template with Cursor's Agent AI
    You: "What should I do to get started?"
    Agent: "I see this is for STRY0127233. Could you tell me about what you're working on?"
    You: "We need to add a new field to track which change model was used for each change request."
-   Agent: "Could you share any acceptance criteria or requirements you have?"
+   Agent: "I'll note that in storyContext.md. Could you share any acceptance criteria or requirements you have?"
    You: "We need to add a reference field to the change form that points to change models, make it mandatory for normal changes, and include it in reports."
-   Agent: "Got it. Which instance would you like to start investigating this in?"
+   Agent: "Thanks, I've updated storyContext.md with those requirements. Which instance would you like to start investigating this in?"
    You: "I'll start in my PDI to understand how change models work OOB."
+   Agent: "I've added that to techContext.md. Let's begin by examining the current change form structure."
    ```
 
 4. **During Development**
    ```
    You: "I've found the change model table, but I'm not sure about the best way to reference it."
-   Agent: "Let's look at how ServiceNow handles similar references. Could you check if there are any other reference fields on the change form that might follow a similar pattern?"
+   Agent: "I'll document this discovery in systemPatterns.md. Let's look at how ServiceNow handles similar references. Could you check if there are any other reference fields on the change form that might follow a similar pattern?"
+   You: "Yes, there's a reference to the assignment group that looks similar."
+   Agent: "Perfect, I'll add that pattern to our documentation. This suggests we could use a similar approach for the change model reference."
    ```
 
 5. **Moving to Dev**
    ```
    You: "I've tested the changes in PDI and understand what we need to do."
-   Agent: "Great! Before we recreate the changes in dev, let's document what we learned about the change model structure and the fields we'll need to add."
+   Agent: "Great! I've updated progress.md with our findings. Before we recreate the changes in dev, let's review what we learned about the change model structure and the fields we'll need to add."
    ```
 
-The Agent AI maintains context between these interactions, using targeted questions to help you explore solutions and document decisions. Each story or spike gets its own private repository, allowing you to maintain separate contexts for different development tasks.
+The Agent AI maintains context between these interactions, proactively documenting discoveries and decisions in the template files while using targeted questions to help you explore solutions. Each story or spike gets its own private repository, allowing you to maintain separate contexts for different development tasks.
 
 ## Important: Repository Privacy
 
