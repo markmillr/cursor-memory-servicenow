@@ -66,15 +66,15 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
    - File > Open Folder > Select your cloned repository
    - Wait for Cursor to index the files
 
-3. **Configure Your Project**
-   - Update `storyContext.md` with your story/spike details
-   - Update `techContext.md` with your instance information
-   - Update `projectbrief.md` with your project goals
-
-4. **Start Working**
+3. **Start Working**
    - Click the chat icon in Cursor's right sidebar
    - Select "Agent" mode
-   - Ask "What should I do next?" or "What do you need me to add?"
+   - Ask "What should I do next?" or "What should I do to get started?"
+   - The AI agent will guide you through:
+     - Collecting your story/spike details
+     - Gathering instance information
+     - Setting up project goals
+     - Automatically updating all necessary files
 
 ## Project Structure
 
