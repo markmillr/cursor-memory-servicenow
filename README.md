@@ -2,6 +2,54 @@
 
 A template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod).
 
+## Project Structure
+
+The memory bank consists of these key files:
+
+```mermaid
+graph TD
+    PB[projectbrief.md] --> TC[techContext.md]
+    PB --> SP[systemPatterns.md]
+    PB --> SC[storyContext.md]
+    
+    TC --> AC[activeContext.md]
+    SP --> AC
+    SC --> AC
+    
+    AC --> P[progress.md]
+```
+
+1. `storyContext.md` - Story/spike details and acceptance criteria
+2. `techContext.md` - Instance and environment information
+3. `projectbrief.md` - Project scope and goals
+4. `activeContext.md` - Current work focus
+5. `progress.md` - Implementation status
+6. `systemPatterns.md` - Technical decisions
+
+## Environment Support
+
+This template supports working across ServiceNow environments:
+
+```mermaid
+graph LR
+    PDI[PDI] -->|Research OOB| SB[Sandbox]
+    SB -->|Validate| DEV[Development]
+    DEV -->|Update Set| TEST[Test]
+    TEST -->|Standard Change| PROD[Production]
+    
+    style PDI fill:#f9f,stroke:#333,stroke-width:2px
+    style SB fill:#bbf,stroke:#333,stroke-width:2px
+    style DEV fill:#bfb,stroke:#333,stroke-width:2px
+    style TEST fill:#fbb,stroke:#333,stroke-width:2px
+    style PROD fill:#fbf,stroke:#333,stroke-width:2px
+```
+
+- **PDI**: For OOB behavior research and POCs
+- **Customer Sandbox**: For validating solutions with customer data
+- **Development**: Primary coding environment
+- **Test**: For QA and UAT
+- **Production**: Deploy via standard change process
+
 ## Why Use This Template?
 
 When working with Cursor's Agent AI on ServiceNow development tasks, maintaining context between chat sessions is crucial. This template helps by:
@@ -76,27 +124,6 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
      - Setting up project goals
      - Automatically updating all necessary files
 
-## Project Structure
-
-The memory bank consists of these key files:
-
-1. `storyContext.md` - Story/spike details and acceptance criteria
-2. `techContext.md` - Instance and environment information
-3. `projectbrief.md` - Project scope and goals
-4. `activeContext.md` - Current work focus
-5. `progress.md` - Implementation status
-6. `systemPatterns.md` - Technical decisions
-
-## Environment Support
-
-This template supports working across ServiceNow environments:
-
-- **PDI**: For OOB behavior research and POCs
-- **Customer Sandbox**: For validating solutions with customer data
-- **Development**: Primary coding environment
-- **Test**: For QA and UAT
-- **Production**: Deploy via standard change process
-
 ## Best Practices
 
 1. **Documentation**
@@ -110,6 +137,29 @@ This template supports working across ServiceNow environments:
    - Never modify production directly
    - Document any environment-specific issues
 
+## Viewing Mermaid Diagrams
+
+### In Cursor
+1. Install the "Markdown Preview Mermaid Support" extension
+2. Open any markdown file
+3. Click the preview icon in the top-right corner
+4. Diagrams will render automatically
+
+### On GitHub
+- Mermaid diagrams are automatically rendered in markdown files
+- No additional setup required
+- Diagrams update automatically when you push changes
+
 ## License
 
-MIT License 
+MIT License
+
+## Acknowledgments
+
+This template was inspired by and builds upon several resources:
+
+1. The [Cursor Memory Bank](https://gist.github.com/ipenywis/1bdb541c3a612dbac4a14e1e3f4341ab) by [@ipenywis](https://github.com/ipenywis) (Islem Maboud / CoderOne)
+2. [CoderOne's YouTube channel](https://www.youtube.com/@CoderOne) and [Cursor Memory Bank video](https://www.youtube.com/watch?v=Uufa6flWid4)
+3. Independent ServiceNow development and research work by the template author
+
+The template has been specifically adapted for ServiceNow development workflows and environment management, with a focus on maintaining context across multiple ServiceNow instances. 
