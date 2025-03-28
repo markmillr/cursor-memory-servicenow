@@ -1,6 +1,6 @@
 # ServiceNow Development Memory Bank Template
 
-A template for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod).
+A GitHub template repository for maintaining project context and state in ServiceNow development projects when working with Cursor AI. This template helps ServiceNow developers maintain context between AI chat sessions, especially when working across different environments (PDI, Sandbox, Dev, Test, Prod). You can create multiple private repositories from this template, one for each story or spike you're working on.
 
 ## Example Usage
 
@@ -205,10 +205,12 @@ When working with Cursor's Agent AI on ServiceNow development tasks, maintaining
 
 ## Quick Start
 
-1. **Fork and Clone**
+1. **Create New Repository from Template**
    - Go to https://github.com/markmillr/cursor-memory-servicenow
-   - Click "Fork" in the top-right corner
-   - Rename your forked repository to match your story/spike (e.g., "story-12345-incident-form")
+   - Click "Use this template" > "Create a new repository"
+   - Name your repository to match your story/spike (e.g., "story-12345-incident-form" or "spike-678-impact-tracking")
+   - Choose "Private" for repository visibility
+   - Click "Create repository from template"
    - Clone to your machine:
      ```bash
      git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
