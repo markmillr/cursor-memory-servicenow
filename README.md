@@ -227,7 +227,7 @@ The AI agent can automatically commit and push changes to your private GitHub re
 ## Best Practices
 
 1. **Documentation**
-   - Keep `storyContext.md` updated with current work
+   - AI Agent keeps `storyContext.md` updated with current work
    - Document environment-specific configurations
    - Note any technical decisions made
 
