@@ -4,7 +4,7 @@ A template for maintaining project context and state in ServiceNow development p
 
 ## Important: Repository Privacy
 
-This template is designed for working with private company data and configurations. When you fork this repository:
+This template is designed to keep all data and configurations private. When you fork this repository:
 
 1. **Default Privacy**
    - Your forked repository will be created as private by default
